@@ -8,97 +8,82 @@ h1, h2, h3, h4, h5, h6, p, a, div, span, button, input {
     font-family: Arial, sans-serif;
 }
 
-header {
-    background: #333;
-    color: white;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-.header-content {
+ .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+    padding: 10px 20px;
+  }
 
-.logo img {
-    height: 50px;
-    margin-left: 10px;
-    border-radius: 50%;
-}
-
-nav {
-    flex: 1;
-    text-align: center;
-}
-
-.nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  .header-content {
     display: flex;
-    justify-content: center;
-}
+    justify-content: space-between;
+    width: 100%;
+  }
 
-.nav-links li {
-    margin: 0 15px;
-}
+  .logo img {
+    width: 120px;
+  }
 
-.nav-links a {
-    color: white;
+  nav {
+    position: relative;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+
+  .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .header-right .cta-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    padding: 5px 0;
-}
+  }
 
-.nav-links a:hover {
-    border-bottom: 2px solid #f4a261;
-}
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      background-color: #f9f9f9;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      display: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      border-radius: 5px;
+    }
 
-.header-right {
-    display: flex;
-    align-items: center;
-}
+    .nav-links.active {
+      display: flex;
+    }
 
-.search-form {
-    margin-right: 15px;
-}
+    .toggle-menu {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
 
-.search-form input[type="text"] {
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-}
-
-.search-form button {
-    background: #f4a261;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.search-form button:hover {
-    background: #e76f51;
-}
-
-.cta-button {
-    background: #2a9d8f;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.cta-button:hover {
-    background: #264653;
-}
+    .toggle-menu span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #333;
+      border-radius: 3px;
+    }
+  }
 
 /* Introduction Section */
 #introduction {
