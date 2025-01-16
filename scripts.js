@@ -1,3 +1,11 @@
+ // Toggle Menu Animation
+  const toggleMenu = document.getElementById("toggle-menu");
+  const navLinks = document.getElementById("nav-links");
+
+  toggleMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
 window.addEventListener('scroll', function() {
     const aboutSection = document.getElementById('about-me-snapshot');
     const sectionPosition = aboutSection.getBoundingClientRect().top;
