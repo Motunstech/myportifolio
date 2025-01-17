@@ -614,8 +614,101 @@ h2 {
 
 .back-to-top:hover {
     background-color: #ffbb00;
+    
 }
 
 #year {
     font-weight: bold;
+}
+
+/* Responsive Design */
+
+/* For tablets and larger mobile devices (widths between 600px and 768px) */
+@media only screen and (max-width: 768px) {
+    .intro-content h1 {
+        font-size: 2.5em;
+    }
+    .tagline {
+        font-size: 1.3em;
+    }
+    .Portfolio-button, .contact-button {
+        padding: 8px 15px;
+        margin: 0 5px;
+    }
+    .about-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .profile-photo {
+        max-width: 200px;
+    }
+    .discover-button {
+        width: 50%;
+    }
+    .synergy-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .achievements-item {
+        width: calc(50% - 10px);
+    }
+}
+
+/* For smaller mobile devices (widths below 600px) */
+@media only screen and (max-width: 600px) {
+    .intro-content h1 {
+        font-size: 2em;
+    }
+    .tagline {
+        font-size: 1em;
+    }
+    .Portfolio-button, .contact-button {
+        font-size: 0.9em;
+        padding: 5px 10px;
+        margin: 0 3px;
+    }
+    .about-content {
+        gap: 15px;
+    }
+    .profile-photo {
+        max-width: 150px;
+    }
+    .discover-button {
+        width: 70%;
+    }
+    .synergy-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .achievements-item {
+        width: 100%;
+    }
+    .carousel-slide img {
+        max-height: 200px;
+    }
+}
+
+/* For large screens (widths above 1200px) */
+@media only screen and (min-width: 1200px) {
+    .intro-content h1 {
+        font-size: 4em;
+    }
+    .tagline {
+        font-size: 1.8em;
+    }
+    .Portfolio-button, .contact-button {
+        padding: 12px 25px;
+    }
+    .profile-photo {
+        max-width: 350px;
+    }
+    .discover-button {
+        width: 15%;
+    }
+    .synergy-item {
+        gap: 60px;
+    }
+    .achievements-item {
+        width: calc(20% - 20px);
+    }
 }
