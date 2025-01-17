@@ -7,66 +7,143 @@
     <link rel="stylesheet" href="styles.css" />
    
     
-    <script src="scripts.js"></script>
-  </head>
-  <body>
-   <!-- Header Section -->
-  <header class="bg-white shadow-md">
-    <div class="container d-flex align-items-center justify-content-between py-3">
+   <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1000;
+    }
+    .logo img {
+      max-width: 120px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    #toggle-menu {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+    }
+    #toggle-menu span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #000;
+      margin: 5px 0;
+    }
+    #nav-links {
+      list-style: none;
+      display: flex;
+    }
+    #nav-links.hidden {
+      display: none;
+    }
+    #nav-links li {
+      margin: 0 10px;
+    }
+    #nav-links a {
+      text-decoration: none;
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    #nav-links a:hover {
+      background-color: #f0f0f0;
+    }
+    .header-right .btn {
+      text-decoration: none;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .header-right .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      #toggle-menu {
+        display: block;
+      }
+      #nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      #nav-links li {
+        margin: 10px 0;
+      }
+      .header-right {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
       <!-- Logo -->
       <div class="logo">
         <a href="#home">
-          <img src="dsp.jpg" alt="Toheeb Ishola Alli Logo" class="img-fluid" style="max-width: 120px;" />
+          <img src="dsp.jpg" alt="Toheeb Ishola Alli Logo" />
         </a>
       </div>
 
       <!-- Navigation -->
-      <nav class="d-flex align-items-center">
+      <nav>
         <!-- Toggle Button (Mobile) -->
-        <button
-          id="toggle-menu"
-          class="d-lg-none"
-          aria-label="Toggle navigation"
-        >
-          <span class="d-block bg-dark" style="width: 25px; height: 3px; margin-bottom: 5px;"></span>
-          <span class="d-block bg-dark" style="width: 25px; height: 3px; margin-bottom: 5px;"></span>
-          <span class="d-block bg-dark" style="width: 25px; height: 3px;"></span>
+        <button id="toggle-menu" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
         <!-- Nav Links -->
-        <ul
-          id="nav-links"
-          class="hidden d-lg-flex flex-column flex-lg-row list-unstyled mb-0 bg-white position-lg-static shadow-lg shadow-none p-lg-0"
-        >
-          <li class="nav-item">
-            <a href="#home" class="nav-link text-dark px-3 py-2">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#about" class="nav-link text-dark px-3 py-2">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="#portfolio" class="nav-link text-dark px-3 py-2">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a href="#testimonials" class="nav-link text-dark px-3 py-2">Testimonials</a>
-          </li>
-          <li class="nav-item">
-            <a href="https://desuperpen.blogspot.com/" target="_blank" class="nav-link text-dark px-3 py-2">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a href="#contact" class="nav-link text-dark px-3 py-2">Contact</a>
-          </li>
+        <ul id="nav-links" class="hidden">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="https://desuperpen.blogspot.com/" target="_blank">Blogs</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
       <!-- Call to Action -->
-      <div class="header-right d-none d-lg-block">
-        <a
-          href="path/to/your-cv.pdf"
-          class="btn btn-primary"
-          download
-          >Download CV</a
-        >
+      <div class="header-right">
+        <a href="path/to/your-cv.pdf" class="btn" download>Download CV</a>
       </div>
     </div>
   </header>
@@ -375,10 +452,13 @@
     </footer>
      
   
-  <script>
-    // Mobile Toggle Menu
-    document.getElementById('toggle-menu').addEventListener('click', function () {
-      const navLinks = document.getElementById('nav-links');
+    <script src="scripts.js"></script>
+   <script>
+    // Toggle menu functionality
+    const toggleMenuButton = document.getElementById('toggle-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    toggleMenuButton.addEventListener('click', () => {
       navLinks.classList.toggle('hidden');
     });
   </script>
